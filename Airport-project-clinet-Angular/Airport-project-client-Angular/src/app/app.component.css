@@ -1,0 +1,35 @@
+.mainfiled {
+    background-image: url("https://cdn.pixabay.com/photo/2013/02/21/19/10/grass-84622_960_720.jpg");
+    height: initial;
+    background-color: brown;
+}
+
+.flightSchedule {
+    display: flex;
+}
+
+.planesListTitle{
+   font-weight: bolder;
+}
+
+.airplanesDisplay {
+    background-image: url("https://cdn.pixabay.com/photo/2017/02/15/11/05/texture-2068283__340.jpg");
+    overflow-x: auto;
+    background-color: aqua;
+    width: 400px;
+    height: 400px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+.airplaneItemDisplay {
+    padding-left: 10px;
+    display: flex;
+
+}
+.stationsGrid{
+    background-color: green;
+}

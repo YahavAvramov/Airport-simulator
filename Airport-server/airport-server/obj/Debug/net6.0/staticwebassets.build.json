@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "GDyxjnGFPbdpLNyIGx9exLONo0FdCe2TRH2Bvo8C1h8=",
+  "Source": "airport-server",
+  "BasePath": "_content/airport-server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

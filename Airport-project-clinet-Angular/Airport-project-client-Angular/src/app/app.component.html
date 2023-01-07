@@ -1,0 +1,45 @@
+
+
+
+  <div [className]="'mainfiled'">
+    <div>
+
+<app-take-off (TakeOfPlanEvent)="eventHandlerTakeOff($event)" [isairplanesTakeOffListHasPlanes]= "isairplanesTakeOffListHasPlanes"></app-take-off>
+  <app-landing (landPlan)="eventHandlerLandingPlan($event)"></app-landing>
+
+  
+  <div [className]="'flightSchedule'">
+    <div>
+      <app-take-off-table [airplanes]="airplanesTakeOffList"></app-take-off-table>
+    </div>
+
+    <div>
+      <app-landing-stations [airplanes]="airplaneLandingList"></app-landing-stations>
+    </div>
+
+  <div [className]="'airplanesDisplay'">
+    <h1 [className]="'planesListTitle'">Planes it the airport</h1>
+    <div *ngFor="let p of airplaneList">
+      <div>
+         <app-all-airplane-display [airplane]="p" [className]="'airplaneItemDisplay'"></app-all-airplane-display>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<div [className]="'stationsGrid'">
+  <app-flight-manager [takeOffList]="airplanesTakeOffList" [landingList]="airplaneLandingList" (updateAirplaneList)="updateAirplaneListFromDb()"></app-flight-manager>
+</div>
+
+</div>
+
+  <router-outlet></router-outlet>
+  </div>
+
+
+  
+
+
+
+

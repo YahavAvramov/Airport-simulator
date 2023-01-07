@@ -1,0 +1,12 @@
+{
+    "airplanes": [
+        {
+            "planId":1,
+            "companyName": "Elal"
+        },
+        {
+            "planId":2,
+            "companyName": "Arkia"   
+        }
+    ]
+}
