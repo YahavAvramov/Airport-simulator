@@ -1,7 +1,13 @@
 .mainfiled {
+    
     background-image: url("https://cdn.pixabay.com/photo/2013/02/21/19/10/grass-84622_960_720.jpg");
-    height: initial;
     background-color: brown;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .flightSchedule {

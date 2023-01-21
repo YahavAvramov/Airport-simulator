@@ -1,5 +1,7 @@
 #mainDiv{
     background-image: url("https://cdn.pixabay.com/photo/2013/02/21/19/10/grass-84622_960_720.jpg");
+    background-color: black;
+    position: relative;
 }
 
 .stations {
@@ -16,9 +18,14 @@ border: 3px;
 }
 .stationsDisplay{
     display: flex;
+
     position: absolute;
-    bottom: -100px;
-    right: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 0px;
+    
 }
 #station1{
 font-size: 20px;
@@ -26,9 +33,9 @@ font-weight: bold;
 text-align: center;
 
 
-    position: absolute;
-    bottom: 0px;
-    right: 20px;
+position: absolute;
+    bottom: -100px;
+    right: 0px;
   
 }
 #station2{
@@ -37,7 +44,7 @@ text-align: center;
     text-align: center;
 
     position: absolute;
-    bottom: 0px;
+    bottom: -100px;
     right: 185px;
   
 }
@@ -46,8 +53,8 @@ font-size: 20px;
 font-weight: bold;
 text-align: center;
 
-    position: absolute;
-    bottom: 0px;
+position: absolute;
+    bottom: -100px;
     right: 350px;
   
 }
@@ -58,7 +65,7 @@ text-align: center;
 
     width: 300px;
     position: absolute;
-    bottom: 0px;
+    bottom: -100px;
     right: 515px;
 }
 #station5{
@@ -66,8 +73,8 @@ font-size: 20px;
 font-weight: bold;
 text-align: center;
 
-    position: absolute;
-    bottom: -175px;
+position: absolute;
+    bottom: -275px;
     right: 740px;
 }
 #station6{
@@ -76,7 +83,7 @@ text-align: center;
     text-align: center;
 
     position: absolute;
-    bottom: -340px;
+    bottom: -440px;
     right: 665px;
 }
 #station7{
@@ -84,8 +91,8 @@ font-size: 20px;
 font-weight: bold;
 text-align: center;
 
-    position: absolute;
-    bottom: -340px;
+position: absolute;
+    bottom: -440px;
     right: 430px;
 }
 #station8{
@@ -94,7 +101,7 @@ text-align: center;
     text-align: center;
 
     position: absolute;
-    bottom: -175px;
+    bottom: -275px;
     right: 320px;
 }
 #station9{
@@ -103,7 +110,13 @@ font-weight: bold;
 text-align: center;
 
 width: 300px;
-    position: absolute;
-    bottom: 0px;
+position: absolute;
+    bottom: -100px;
     right: 835px;
 }
+
+  .footerDiv{
+height: 500px;
+background-image: url("https://cdn.pixabay.com/photo/2013/02/21/19/10/grass-84622_960_720.jpg");
+background-color: black;
+  }

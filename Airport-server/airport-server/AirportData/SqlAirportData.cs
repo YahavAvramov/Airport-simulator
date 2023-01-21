@@ -19,21 +19,14 @@ namespace airport_server.AirportData
         }
 
         //return all the airplanes from the db
-        public List<Airplane> GetAirplanes()
-        {
-            return _context.Airplanes.ToList();
-        }
+        public List<Airplane> GetAirplanes() =>_context.Airplanes.ToList();
+      
 
-        public Airplane GetById(int id)
-        {
-            return _context.Airplanes.SingleOrDefault(p => p.AirplaneId == id);
-        }
+        public Airplane GetById(int id) => _context.Airplanes.SingleOrDefault(p => p.AirplaneId == id);
 
 
-        public Airplane GetRandomAirplane()
-        {
-            return _context.Airplanes.First();
-        }
+        public Airplane GetRandomAirplane() =>_context.Airplanes.First();
+       
 
         //delete airplane from the db
         public void RemoveAirplane(Airplane plan)

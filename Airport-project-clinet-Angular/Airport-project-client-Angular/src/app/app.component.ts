@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AirportServiceService } from './service/airport.service';
 import Airplane from 'src/models/Airplane';
 import AirplainCompanyNames from 'src/models/AirplainCompanyNames';
+import { SignalRService } from './components/SignalRService.';
 
 
 @Component({
@@ -9,8 +10,9 @@ import AirplainCompanyNames from 'src/models/AirplainCompanyNames';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  constructor(private airportService: AirportServiceService) { }
+export class AppComponent implements OnInit{
+
+  constructor(private airportService: AirportServiceService , public signalRService: SignalRService) { }
   airplaneList: Airplane[] = [];
 
   airplanesTakeOffList: any[] = [];
@@ -23,6 +25,9 @@ export class AppComponent {
   title = "app";
 
   ngOnInit() {
+    this.signalRService.startConnection();
+    this.signalRService.on();
+
     this.airportService.get().subscribe(
       (response) => { this.airplaneList = response as Airplane[]; },
       (error) => { console.log("Eror : " + error); });
@@ -47,6 +52,10 @@ export class AppComponent {
   //this get a random airplane from the data base
  eventHandlerTakeOff(event: any)
    {
+    this.airportService.startTakeOffStation(event as Airplane).subscribe(data =>{
+      console.log(data);
+    });
+    
     console.log(event);
     if(event != null && event != undefined){
        this.airplaneTakeOff = event;
@@ -66,6 +75,11 @@ export class AppComponent {
   eventHandlerLandingPlan(event: any) {
 
     this.airplineLanding = this.getPlainDitails();
+
+    this.airportService.startLandingStation(this.airplineLanding as Airplane).subscribe(data =>{
+      console.log(data);
+    });
+
     this.airplaneLandingList.push(this.airplineLanding);
 
   }

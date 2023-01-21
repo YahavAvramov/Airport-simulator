@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
+import Airplane from 'src/models/Airplane';
 
 @Injectable({
   providedIn: 'root'
@@ -24,16 +25,7 @@ export class AirportServiceService {
     return this.http.get(this.url + "GetTakeOffAirplane")
   }
 
-//   addAirplaine(airplan: any) {
-//     // this.http.post(this.url + "AddAirplane" , airplan);
-//     const params = new HttpParams({
-//       fromObject: { companyName: airplan.companyName }
-//     }
-//     );
-//     var headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-//     //the HTTP post request
-//     return this.http.post(this.url + "AddAirplane", params, { headers });
-// }
+
 
 //get id and delte the airplane from the data by this id
 delete(id:number){
@@ -45,5 +37,14 @@ addAirplane(airplane:any) {
   const body=JSON.stringify(airplane);
   console.log(body)
   return this.http.post(this.url + "AddAirplane" , airplane)
+}
+
+
+startTakeOffStation(airplane:Airplane) {
+  return this.http.post(this.url+ "StartTakeOffStation",airplane)
+}
+
+startLandingStation(airplane :Airplane){
+  return this.http.post(this.url +"StartLandingStation" , airplane)
 }
 }
